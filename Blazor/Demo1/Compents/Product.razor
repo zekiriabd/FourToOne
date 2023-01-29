@@ -1,0 +1,29 @@
+﻿@using Demo1.Models;
+@if (product != null)
+{
+    <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="/images/@product.Image" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">@product.Name</h5>
+            <p class="card-text">@product.Comment</p>
+            <span>@product.Price€</span>
+        </div>
+    </div>
+}
+
+@code 
+{
+    private MyProduct product;
+    protected override void OnInitialized()
+    {
+    product = new(){
+            Id = 1,
+            Name = "Nike Air Max ",
+            Image = "Product1.png",
+            Comment = @"Confort rembourré
+                        La semelle intermédiaire en mousse et l'unité Max Air au talon amortissent votre pied pour
+                        un confort durable. Le col en mousse protège votre cheville à chacun de vos mouvements.",
+            Price = 109.99M
+        };
+    }
+}

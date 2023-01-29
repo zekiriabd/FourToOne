@@ -1,0 +1,101 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\DEV\\Softwe3\\Blazor\\Blazor_Wasm\\demos\\Demi1\\Demo1\\Demo1\\bin\\Debug\\net7.0\\wwwroot\\_framework\\blazor.webassembly.js",
+      "PackagePath": "staticwebassets\\_framework\\blazor.webassembly.js"
+    },
+    {
+      "Id": "C:\\DEV\\Softwe3\\Blazor\\Blazor_Wasm\\demos\\Demi1\\Demo1\\Demo1\\obj\\Debug\\net7.0\\build-gz\\xMT7Vqhj.gz",
+      "PackagePath": "staticwebassets\\_framework\\blazor.webassembly.js.gz"
+    },
+    {
+      "Id": "C:\\DEV\\Softwe3\\Blazor\\Blazor_Wasm\\demos\\Demi1\\Demo1\\Demo1\\obj\\Debug\\net7.0\\scopedcss\\bundle\\Demo1.styles.css",
+      "PackagePath": "staticwebassets\\Demo1.styles.css"
+    },
+    {
+      "Id": "C:\\DEV\\Softwe3\\Blazor\\Blazor_Wasm\\demos\\Demi1\\Demo1\\Demo1\\wwwroot\\css\\app.css",
+      "PackagePath": "staticwebassets\\css\\app.css"
+    },
+    {
+      "Id": "C:\\DEV\\Softwe3\\Blazor\\Blazor_Wasm\\demos\\Demi1\\Demo1\\Demo1\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\css\\bootstrap\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\DEV\\Softwe3\\Blazor\\Blazor_Wasm\\demos\\Demi1\\Demo1\\Demo1\\wwwroot\\css\\bootstrap\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\css\\bootstrap\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "C:\\DEV\\Softwe3\\Blazor\\Blazor_Wasm\\demos\\Demi1\\Demo1\\Demo1\\wwwroot\\css\\open-iconic\\FONT-LICENSE",
+      "PackagePath": "staticwebassets\\css\\open-iconic"
+    },
+    {
+      "Id": "C:\\DEV\\Softwe3\\Blazor\\Blazor_Wasm\\demos\\Demi1\\Demo1\\Demo1\\wwwroot\\css\\open-iconic\\ICON-LICENSE",
+      "PackagePath": "staticwebassets\\css\\open-iconic"
+    },
+    {
+      "Id": "C:\\DEV\\Softwe3\\Blazor\\Blazor_Wasm\\demos\\Demi1\\Demo1\\Demo1\\wwwroot\\css\\open-iconic\\README.md",
+      "PackagePath": "staticwebassets\\css\\open-iconic\\README.md"
+    },
+    {
+      "Id": "C:\\DEV\\Softwe3\\Blazor\\Blazor_Wasm\\demos\\Demi1\\Demo1\\Demo1\\wwwroot\\css\\open-iconic\\font\\css\\open-iconic-bootstrap.min.css",
+      "PackagePath": "staticwebassets\\css\\open-iconic\\font\\css\\open-iconic-bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\DEV\\Softwe3\\Blazor\\Blazor_Wasm\\demos\\Demi1\\Demo1\\Demo1\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.eot",
+      "PackagePath": "staticwebassets\\css\\open-iconic\\font\\fonts\\open-iconic.eot"
+    },
+    {
+      "Id": "C:\\DEV\\Softwe3\\Blazor\\Blazor_Wasm\\demos\\Demi1\\Demo1\\Demo1\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.otf",
+      "PackagePath": "staticwebassets\\css\\open-iconic\\font\\fonts\\open-iconic.otf"
+    },
+    {
+      "Id": "C:\\DEV\\Softwe3\\Blazor\\Blazor_Wasm\\demos\\Demi1\\Demo1\\Demo1\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.svg",
+      "PackagePath": "staticwebassets\\css\\open-iconic\\font\\fonts\\open-iconic.svg"
+    },
+    {
+      "Id": "C:\\DEV\\Softwe3\\Blazor\\Blazor_Wasm\\demos\\Demi1\\Demo1\\Demo1\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.ttf",
+      "PackagePath": "staticwebassets\\css\\open-iconic\\font\\fonts\\open-iconic.ttf"
+    },
+    {
+      "Id": "C:\\DEV\\Softwe3\\Blazor\\Blazor_Wasm\\demos\\Demi1\\Demo1\\Demo1\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.woff",
+      "PackagePath": "staticwebassets\\css\\open-iconic\\font\\fonts\\open-iconic.woff"
+    },
+    {
+      "Id": "C:\\DEV\\Softwe3\\Blazor\\Blazor_Wasm\\demos\\Demi1\\Demo1\\Demo1\\wwwroot\\favicon.png",
+      "PackagePath": "staticwebassets\\favicon.png"
+    },
+    {
+      "Id": "C:\\DEV\\Softwe3\\Blazor\\Blazor_Wasm\\demos\\Demi1\\Demo1\\Demo1\\wwwroot\\icon-192.png",
+      "PackagePath": "staticwebassets\\icon-192.png"
+    },
+    {
+      "Id": "C:\\DEV\\Softwe3\\Blazor\\Blazor_Wasm\\demos\\Demi1\\Demo1\\Demo1\\wwwroot\\images\\Product1.png",
+      "PackagePath": "staticwebassets\\images\\Product1.png"
+    },
+    {
+      "Id": "C:\\DEV\\Softwe3\\Blazor\\Blazor_Wasm\\demos\\Demi1\\Demo1\\Demo1\\wwwroot\\index.html",
+      "PackagePath": "staticwebassets\\index.html"
+    },
+    {
+      "Id": "C:\\DEV\\Softwe3\\Blazor\\Blazor_Wasm\\demos\\Demi1\\Demo1\\Demo1\\wwwroot\\sample-data\\weather.json",
+      "PackagePath": "staticwebassets\\sample-data\\weather.json"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.Demo1.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.build.Demo1.props",
+      "PackagePath": "build\\Demo1.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildMultiTargeting.Demo1.props",
+      "PackagePath": "buildMultiTargeting\\Demo1.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildTransitive.Demo1.props",
+      "PackagePath": "buildTransitive\\Demo1.props"
+    }
+  ],
+  "ElementsToRemove": []
+}
