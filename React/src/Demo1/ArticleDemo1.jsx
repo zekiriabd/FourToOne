@@ -20,7 +20,6 @@ function Article() {
       <div className="card-body">
         <h5 className="card-title">{Name}</h5>
         <p className="card-text">{Comment}</p>
-
         <span>{Price}$</span>
       </div>
     </div>
