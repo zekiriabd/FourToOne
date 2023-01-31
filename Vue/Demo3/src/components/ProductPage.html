@@ -1,0 +1,14 @@
+
+    <div class="card myclass" style="width: 18rem;">
+      <img class="card-img-top" :src="`${product.pro.Image}`" alt="Card image cap"/>
+      <div class="card-body">
+          <h5 class="card-title">{{product.pro.Name}}</h5>
+          <p class="card-text">{{product.pro.Comment}}</p>
+          
+          <div v-if="product.pro.Discount > 0">          
+            <span class="text-decoration-line-through">{{product.pro.Price}}€</span>
+            <span class="text-danger m-2">{{product.pro.Price * product.pro.Discount / 100 }}€</span>
+          </div>
+          <span v-else>{{product.pro.Price}}€</span>        
+      </div>
+  </div>
