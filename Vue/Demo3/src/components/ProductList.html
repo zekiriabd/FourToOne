@@ -1,0 +1,19 @@
+
+<div v-for = "pro in products">
+  <ProductPage :product="{pro}"/>
+</div>
+
+  <!--  <div v-for = "product in products" class="card myclass">
+      <img class="card-img-top" :src="`${product.Image}`" alt="Card image cap"/>
+      <div class="card-body">
+          <h5 class="card-title">{{product.Name}}</h5>
+          <p class="card-text">{{product.Comment}}</p>
+          
+          <div v-if="product.Discount > 0">          
+            <span class="text-decoration-line-through">{{product.Price}}€</span>
+            <span class="text-danger m-2">{{product.Price * product.Discount / 100 }}€</span>
+          </div>
+          <span v-else>{{product.Price}}€</span>        
+      </div>
+  </div>-->
+  

@@ -1,16 +1,20 @@
-﻿    <div class="card" style="width: 18rem;">
-        <img class="card-img-top" src="/images/@product.Image" alt="Card image cap">
+﻿<div class="col">
+    <div class="card h-100 shadow-sm">
+        <img src="@ProductArgs.Image" class="card-img-top" alt="...">
         <div class="card-body">
-            <h5 class="card-title">@product.Name</h5>
-            <p class="card-text">@product.Comment</p>
-            @if (product.Discount > 0)
+            <div class="clearfix mb-3">
+                <span class="float-start badge rounded-pill bg-primary">@ProductArgs.Name</span>
+            </div>
+            <h5 class="card-title">@ProductArgs.Comment</h5>
+            @if (ProductArgs.Discount > 0)
             {
-                <span class="text-decoration-line-through">@product.Price€</span>
-                <span class="text-danger m-2">@( product.Price * product.Discount / 100 )€</span>
+                <span class="text-decoration-line-through">@ProductArgs.Price€</span>
+                <span class="text-danger m-2">@(ProductArgs.Price * ProductArgs.Discount / 100)€</span>
             }
             else
             {
-                <span>@product.Price€</span>
+                <span>@ProductArgs.Price€</span>
             }
         </div>
     </div>
+</div>
