@@ -1,0 +1,13 @@
+<div class="card">
+    <img class="card-img-top" src="{{pro.Image}}" alt="Card image cap"/>
+    <div class="card-body">
+        <h5 class="card-title">{{pro.Name}}</h5>
+        <p class="card-text">{{pro.Comment}}</p>
+     
+        <div *ngIf="pro.Discount > 0; else Divdiscount">
+           <span class="text-decoration-line-through">{{pro.Price}}€</span>
+           <span class="text-danger m-2">{{pro.Price * pro.Discount / 100}}€</span>
+        </div>
+    <div>
+    <ng-template #Divdiscount><span>{{pro.Price}}€</span></ng-template>
+</div>

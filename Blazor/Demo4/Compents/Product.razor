@@ -1,0 +1,29 @@
+﻿<div class="col">
+    <div class="card h-100 shadow-sm">
+        <img src="@ProductArgs.Image" class="card-img-top" alt="..." style="width:100%">
+        <div class="card-body row">
+            <div class="clearfix mb-3 col-10">
+                <span class="float-start badge rounded-pill bg-primary">@ProductArgs.Name</span>
+            </div>
+            <div class="clearfix mbr-3 col-2">
+                <span class="float-start badge rounded-pill bg-primary">@ProductArgs.LikeCount</span>
+            </div>
+            <p class="card-title">@ProductArgs.Comment</p>
+            @if (ProductArgs.Discount > 0)
+            {
+                <span class="text-decoration-line-through">@ProductArgs.Price€</span>
+                <span class="text-danger m-2">@DiscountPrice€</span>
+            }
+            else
+            {
+                <span>@ProductArgs.Price€</span>
+            }
+        </div>
+        <div class="card-footer">
+            <div class="btn-ground text-center pb-1">
+                <button type="button" class="btn btn-primary"><i class="fa fa-shopping-cart"></i>Ajouter au panier</button>
+                <button type="button" class="btn btn-primary" onclick="@(()=>{ProductArgs.LikeCount++;})">J'aime</button>
+            </div>
+        </div>
+    </div>
+</div>

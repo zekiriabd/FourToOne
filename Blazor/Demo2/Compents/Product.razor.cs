@@ -1,5 +1,4 @@
 ﻿using Demo2.Models;
-
 namespace Demo2.Compents
 {
     public partial class Product
