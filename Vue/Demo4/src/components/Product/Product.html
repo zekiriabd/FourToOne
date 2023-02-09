@@ -1,0 +1,23 @@
+<div class="col">
+<div class="card">
+  <img class="card-img-top" :src="`${product.pro.Image}`" alt="Card image cap"/>
+
+  <div class="card-body">
+      <h5 class="card-title">{{product.pro.Name}}
+          <label  class="float-end">{{product.pro.LikeCount}}</label>
+      </h5>
+      <p class="card-text">{{product.pro.Comment}}</p>
+      <div v-if="product.pro.Discount > 0">          
+        <span class="text-decoration-line-through">{{product.pro.Price}}€</span>
+        <span class="text-danger m-2">{{DiscountPrice}}€</span>
+      </div>
+      <span v-else>{{product.pro.Price}}€</span>    
+  </div>
+  <div class="card-footer">
+      <div class="btn-ground text-center pb-1">
+          <button type="button" class="btn btn-primary m-2"><i class="fa fa-shopping-cart"></i>Ajouter au panier</button>
+          <button type="button" class="btn btn-primary" @click="product.pro.LikeCount +=1"><i class="fa fa-info"></i> J'aime</button>
+      </div>
+  </div>
+</div>
+</div>

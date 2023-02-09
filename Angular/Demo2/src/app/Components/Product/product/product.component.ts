@@ -2,14 +2,13 @@ import { Component } from '@angular/core';
 import { Product } from 'src/models/product';
 
 @Component({
-  selector: 'app-hello-world',
-  templateUrl: './hello-world.component.html',
-  styleUrls: ['./hello-world.component.css']
+  selector: 'app-product',
+  templateUrl: './product.component.html',
+  styleUrls: ['./product.component.css']
 })
+export class ProductComponent {
 
-export class HelloWorldComponent {
-
-    pro : Product = {
+  pro : Product = {
     Id:1,
     Name : "Card title",
     Image : "Product1.png",

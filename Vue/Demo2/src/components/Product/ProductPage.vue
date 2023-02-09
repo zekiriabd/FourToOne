@@ -1,6 +1,5 @@
 <style src="./ProductPage.css"></style>
 <template src="./ProductPage.html"></template>
-
 <script>
 export default{
   data() {
