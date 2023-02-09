@@ -1,25 +1,25 @@
-const Product = ({ Name, Image, Price, Comment, Discount } = props) => {
+const Product = (props) => {
   return (
     <>
       <div className="card mx-4 my-4" style={{ maxWidth: "18rem" }}>
         <img
           className="card-img-top"
           style={{ width: "100%", height: 230 }}
-          src={Image}
-          alt={Name}
+          src={props.Image}
+          alt={props.Name}
         />
         <div className="card-body">
-          <h5 className="card-title">{Name}</h5>
-          <p className="card-text">{Comment}</p>
-          {Discount > 0 ? (
+          <h5 className="card-title">{props.Name}</h5>
+          <p className="card-text">{props.Comment}</p>
+          {props.Discount > 0 ? (
             <div>
-              <span className="text-decoration-line-through">{Price}$</span>
+              <span className="text-decoration-line-through">{props.Price}$</span>
               <span className="text-danger m-2">
-                {(Price * Discount) / 100}$
+                {(props.Price * props.Discount) / 100}$
               </span>
             </div>
           ) : (
-            <span>{Price}$</span>
+            <span>{props.Price}$</span>
           )}
         </div>
       </div>
