@@ -1,0 +1,7 @@
+
+<i class="fa fa-shopping-cart"></i>
+<a routerLink="/prductlist">Product List</a>    
+    
+<div *ngFor="let prod of selectedProducts" class="row">
+    <app-product [product]="prod" [readonly]="true"></app-product>      
+</div>
