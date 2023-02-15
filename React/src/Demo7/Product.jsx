@@ -3,32 +3,23 @@ import heartEmpty from "../assets/heart_empty.png";
 import { ProductProvider } from "./App";
 import { useContext, useState } from "react";
 
-const Product = ({
-  Name,
-  Image,
-  Price,
-  Comment,
-  Discount,
-  Id,
-  Likes,
-  showText,
-} = props) => {
+const Product = (props) => {
   const [isLiked, setIsLiked] = useState(false);
   const handleLike = () => {
     setIsLiked(!isLiked);
   };
   const { addedProducts, setAddedProducts } = useContext(ProductProvider);
   const AlreadyAdded = addedProducts.find((existingId) => {
-    return existingId === Id;
+    return existingId === props.Id;
   });
   const handleCard = () => {
     if (AlreadyAdded) {
       const listWithoutThisProduct = addedProducts.filter((productID) => {
-        return productID !== Id;
+        return productID !== props.Id;
       });
       setAddedProducts(listWithoutThisProduct);
     } else {
-      setAddedProducts([...addedProducts, Id]);
+      setAddedProducts([...addedProducts, props.Id]);
     }
   };
   return (
@@ -37,26 +28,28 @@ const Product = ({
         <img
           className="card-img-top"
           style={{ width: "100%", height: 230 }}
-          src={Image}
-          alt={Name}
+          src={props.Image}
+          alt={props.Name}
         />
         <div className="card-body">
           <div className="d-flex  justify-content-between align-items-center ">
-            <h5 className="card-title">{Name}</h5>
+            <h5 className="card-title">{props.Name}</h5>
             <p className="text-success fw-bold">
-              {isLiked ? Likes + 1 : Likes} jaime
+              {isLiked ? props.Likes + 1 : props.Likes} jaime
             </p>
           </div>
-          {showText && <p className="card-text">{Comment}</p>}
-          {Discount > 0 ? (
+          {props.showText && <p className="card-text">{props.Comment}</p>}
+          {props.Discount > 0 ? (
             <div>
-              <span className="text-decoration-line-through">{Price}$</span>
+              <span className="text-decoration-line-through">
+                {props.Price}$
+              </span>
               <span className="text-danger m-2">
-                {(Price * Discount) / 100}$
+                {(props.Price * props.Discount) / 100}$
               </span>
             </div>
           ) : (
-            <span>{Price}$</span>
+            <span>{props.Price}$</span>
           )}
         </div>
         <div className="d-flex m-2 justify-content-between align-items-center">
