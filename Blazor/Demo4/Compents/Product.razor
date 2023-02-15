@@ -1,7 +1,7 @@
 ﻿<div class="col">
-    <div class="card h-100 shadow-sm">
+    <div class="card h-100 shadow-sm @(Readonly ? "flex-column-reverse" : "")">
         <img src="@ProductArgs.Image" class="card-img-top" alt="..." style="width:100%">
-        <div class="card-body row">
+        <div class="card-body row ">
             <div class="clearfix mb-3 col-10">
                 <span class="float-start badge rounded-pill bg-primary">@ProductArgs.Name</span>
             </div>
@@ -19,9 +19,9 @@
                 <span>@ProductArgs.Price€</span>
             }
         </div>
-        <div class="card-footer">
+        <div class="card-footer" hidden="@Readonly">
             <div class="btn-ground text-center pb-1">
-                <button type="button" class="btn btn-primary"><i class="fa fa-shopping-cart"></i>Ajouter au panier</button>
+                <button type="button" class="btn btn-primary" onclick="@AddProduct">Ajouter au panier</button>
                 <button type="button" class="btn btn-primary" onclick="@(()=>{ProductArgs.LikeCount++;})">J'aime</button>
             </div>
         </div>

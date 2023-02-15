@@ -1,0 +1,16 @@
+﻿@page "/orderlist"
+
+@if (SelectedProducts!= null && SelectedProducts.Any())
+{
+    <div class="row">
+        <i class="fa fa-shopping-cart"></i><NavLink href="/productlist">Product list</NavLink>
+    </div>
+    <div class="container-fluid bg-trasparent my-4 p-3" style="position: relative;">
+        <div class="row row-cols-1 row-cols-xs-2 row-cols-sm-2 row-cols-lg-4 g-3">
+            @foreach (var product in SelectedProducts)
+            {
+                <Product ProductArgs="product" Readonly="true"/>
+            }
+        </div>
+    </div>
+}

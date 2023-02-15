@@ -1,8 +1,1 @@
-<script setup>
-import ProductList from './components/ProductList/ProductList.vue'
-</script>
-
-<template>
-    <ProductList />
-</template>
-
+<template><router-view></router-view></template>

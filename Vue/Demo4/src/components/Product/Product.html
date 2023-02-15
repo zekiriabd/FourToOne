@@ -1,23 +1,27 @@
 <div class="col">
-<div class="card">
-  <img class="card-img-top" :src="`${product.pro.Image}`" alt="Card image cap"/>
-
-  <div class="card-body">
-      <h5 class="card-title">{{product.pro.Name}}
-          <label  class="float-end">{{product.pro.LikeCount}}</label>
-      </h5>
-      <p class="card-text">{{product.pro.Comment}}</p>
-      <div v-if="product.pro.Discount > 0">          
-        <span class="text-decoration-line-through">{{product.pro.Price}}€</span>
-        <span class="text-danger m-2">{{DiscountPrice}}€</span>
+   
+  <div :class="{'card h-100 shadow-sm flex-column-reverse':true, 'card h-100 shadow-sm':(readonly)}">
+      <img :src="`${product.pro.Image}`" class="card-img-top" alt="..." style="width:100%">
+      <div class="card-body row ">
+          <div class="clearfix mb-3 col-10">
+              <span class="float-start badge rounded-pill bg-primary">{{product.pro.Name}}</span>
+          </div>
+          <div class="clearfix mbr-3 col-2">
+              <span class="float-start badge rounded-pill bg-primary">{{product.pro.LikeCount}}</span>
+          </div>
+          <p class="card-title">{{product.pro.Comment}}</p>
+          <div v-if="product.pro.Discount > 0">          
+            <span class="text-decoration-line-through">{{product.pro.Price}}€</span>
+            <span class="text-danger m-2">{{DiscountPrice}}€</span>
+          </div>
+          <span v-else>{{product.pro.Price}}€</span>   
       </div>
-      <span v-else>{{product.pro.Price}}€</span>    
-  </div>
-  <div class="card-footer">
-      <div class="btn-ground text-center pb-1">
-          <button type="button" class="btn btn-primary m-2"><i class="fa fa-shopping-cart"></i>Ajouter au panier</button>
-          <button type="button" class="btn btn-primary" @click="product.pro.LikeCount +=1"><i class="fa fa-info"></i> J'aime</button>
+      
+      <div class="card-footer" v-show="!readonly">
+          <div class="btn-ground text-center pb-1">
+              <button type="button" class="btn btn-primary" @click="AddProduct()" >Ajouter au panier</button>
+              <button type="button" class="btn btn-primary" @click="this.product.pro.LikeCount +=1">J'aime</button>
+          </div>
       </div>
   </div>
-</div>
 </div>
