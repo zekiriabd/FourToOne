@@ -53,5 +53,10 @@ namespace Demo4.Pages
             }
 
         };
+        private List<int> Ids { get; set; } = new();
+        private void AddProductToIds(int id)
+        {
+            Ids.Add(id);
+        }
     }
 }

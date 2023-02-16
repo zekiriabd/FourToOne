@@ -59,5 +59,11 @@ const ListProduct: Product[] = [
 
 export class ProductListComponent {
   public products = ListProduct;
+
+  public ids:number[] = [];
+  AddProductToIds(id:number){
+    this.ids.push(id);
+  }
+
 }
 

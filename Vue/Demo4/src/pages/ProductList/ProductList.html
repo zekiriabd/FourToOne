@@ -1,11 +1,12 @@
 <div class="row">
   <i class="fa fa-shopping-cart"></i>
-  <router-link to="/orderlist">Panier</router-link>
+  
+  <router-link :to="'/orderlist/' + this.ids.join()">Panier</router-link>  
 </div>
 <div class="container-fluid my-4 p-3 row w-100" >
    <div class="row row-cols-2 row-cols-xs-2 row-cols-sm-2 row-cols-lg-2 g-3">
       <div v-for = "pro in products">
-        <ProductPage :product="{pro}" :readonly="false"/>
+        <ProductPage :product="{pro}" :readonly="false" @OnAddProduct="AddProductToIds($event)"/>
       </div>
     </div>
 </div>

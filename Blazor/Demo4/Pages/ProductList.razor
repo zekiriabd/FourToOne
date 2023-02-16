@@ -2,15 +2,18 @@
 
 @if (products.Any())
 {
-<div class="row">
-    <i class="fa fa-shopping-cart"></i><a href="/orderlist">panier</a>
+    <div class="row">
+        <i class="fa fa-shopping-cart"></i>
+        
+        <a href="/orderlist/@string.Join(',', Ids)">panier</a>
+        <NavLink href='@($"/orderlist/{string.Join(',', Ids)}")'>panier</NavLink>
     
 </div>
 <div class="container-fluid bg-trasparent my-4 p-3" style="position: relative;">
     <div class="row row-cols-1 row-cols-xs-2 row-cols-sm-2 row-cols-lg-4 g-3">
         @foreach (var product in products)
         {
-           <Product ProductArgs="product" />
+          <Product ProductArgs="product" OnAddProduct="AddProductToIds" />
         }
     </div>
 </div>
