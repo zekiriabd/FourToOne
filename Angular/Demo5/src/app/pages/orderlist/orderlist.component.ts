@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Product } from '../../../models/product';
 import { AppState } from '../../store/app-stats';
-
+import { ActivatedRoute } from "@angular/router";
 
 
 const ListProduct: Product[] = [
@@ -61,11 +61,16 @@ export class OrderlistComponent {
   
   selectedProducts:Array<Product>=[];
 
-  constructor(private readonly store: AppState) {}
+  constructor(private readonly store: AppState,private route: ActivatedRoute) {}
     ngOnInit() {
-    let ids! :number[];
+    let ids = this.route.snapshot.paramMap.get('ids');
+    this.selectedProducts = ListProduct.filter(x => ids!.includes(x.Id.toString()));
+
+    /*let ids! :number[];
     this.store.getIds().subscribe((x: number[]) => {ids = x});
     this.selectedProducts = ListProduct.filter(x => ids.includes(x.Id));
+    */
+
    }
   
   

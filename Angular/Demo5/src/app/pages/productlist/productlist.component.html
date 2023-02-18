@@ -1,4 +1,6 @@
-<i class="fa fa-shopping-cart"></i><a routerLink="/orderlist">Panier</a>    
+<i class="fa fa-shopping-cart"></i>
+
+<a [routerLink]="'/orderlist/' + this.ids.join()">Panier</a>    
  <div *ngFor="let prod of products">
-    <app-product [product]="prod"></app-product>      
+    <app-product [product]="prod" (OnAddProduct)="AddProductToIds($event)"></app-product>      
 </div>

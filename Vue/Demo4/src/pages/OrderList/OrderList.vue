@@ -59,9 +59,10 @@ export default{
       ]
     }
   },
-  beforeMount(){
-    this.SelectedProducts = this.products.filter(
-                            (x) => this.$store.getters.getIds.includes(x.Id));   
+  beforeMount(){    
+    //this.SelectedProducts = this.products.filter((x) => this.$store.getters.getIds.includes(x.Id));   
+    let ids = this.$route.params.ids.split(',');
+    this.SelectedProducts = this.products.filter((x) => ids.includes(x.Id.toString()));   
  }
 }
 </script>

@@ -7,8 +7,10 @@ import ProductPage from '../../components/Product/Product.vue'
 
 <script>
 export default{
+
   data() {
     return {
+      ids:[]=[],
       products :[
       {
             Id : 1,
@@ -57,7 +59,13 @@ export default{
             }
       ]
     }
-  }
+  },
+  methods: {
+    AddProductToIds(id) {
+      this.ids.push(id);
+      }
+    },   
+  
 }
 </script>
 

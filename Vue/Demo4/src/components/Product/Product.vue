@@ -13,7 +13,9 @@
 
     methods: {
       AddProduct() {
-        this.$store.commit('setIds',this.product.pro.Id);
+       // this.$store.commit('setIds',this.product.pro.Id);
+       this.$emit("OnAddProduct",this.product.pro.Id);
+       
       }
     },   
   }

@@ -5,7 +5,7 @@ import { ProductListComponent } from './pages/productlist/productlist.component'
 const routes: Routes = [ 
   {path:'', redirectTo:'prductlist',pathMatch:'full'},
   {path:'prductlist',component:ProductListComponent},
-  {path:'orderlist',component:OrderlistComponent}
+  {path:'orderlist/:ids',component:OrderlistComponent}
 ];
 @NgModule({ imports: [RouterModule.forRoot(routes)], exports: [RouterModule]})
 export class AppRoutingModule { }

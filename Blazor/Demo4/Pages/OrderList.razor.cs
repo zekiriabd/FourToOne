@@ -1,4 +1,5 @@
 ﻿using Demo4.Models;
+using Microsoft.AspNetCore.Components;
 
 namespace Demo4.Pages
 {
@@ -54,9 +55,13 @@ namespace Demo4.Pages
             }
 
         };
+
+        [Parameter] public string strIds {get;set;} 
         protected override void OnInitialized()
         {
-            SelectedProducts = products.Where(x => _Store.Ids.Contains(x.Id));
+            //SelectedProducts = products.Where(x => _Store.Ids.Contains(x.Id));
+            var ids = strIds.Split(',');
+            SelectedProducts = products.Where(x => ids.Contains(x.Id.ToString()));
         }
     }
 }
