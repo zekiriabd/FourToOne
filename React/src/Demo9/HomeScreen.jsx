@@ -1,10 +1,10 @@
 import Product from "./Product.jsx";
-import { products } from "./data";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 
 function HomeScreen() {
   const [selectedProducts, setSelectedProducts] = useState([]);
+  const products = JSON.parse(localStorage.getItem("data"));
   return (
     <div>
       <nav className="container">

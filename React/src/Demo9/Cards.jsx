@@ -1,10 +1,10 @@
 import { Link, useSearchParams } from "react-router-dom";
 import Product from "./Product";
-import { products } from "./data";
 
 const Cards = () => {
   const [searchParams] = useSearchParams();
   const addedProducts = searchParams.get("addedProducts").split(",");
+  const products = JSON.parse(localStorage.getItem("data"));
 
   const cartProducts = products.filter((element) => {
     return addedProducts.includes(element.Id);

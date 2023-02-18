@@ -3,6 +3,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Cards from "./Cards";
 import NotFoundPage from "./NotFound";
 import HomeScreen from "./HomeScreen";
+import { processDataSave } from "./data";
 
 const router = createBrowserRouter([
   {
@@ -22,6 +23,7 @@ const router = createBrowserRouter([
 export const ProductProvider = createContext();
 
 const App = () => {
+  processDataSave();
   const [addedProducts, setAddedProducts] = useState([]);
   return (
     <div>
