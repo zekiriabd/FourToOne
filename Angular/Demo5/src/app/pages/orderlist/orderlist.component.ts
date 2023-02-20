@@ -3,7 +3,7 @@ import { Product } from '../../../models/product';
 import { AppState } from '../../store/app-stats';
 import { ActivatedRoute } from "@angular/router";
 
-
+/*
 const ListProduct: Product[] = [
   {
     Id : 1,
@@ -52,6 +52,7 @@ const ListProduct: Product[] = [
     LikeCount:0
     }
 ];
+*/
 @Component({
   selector: 'app-orderlist',
   templateUrl: './orderlist.component.html',
@@ -63,10 +64,14 @@ export class OrderlistComponent {
 
   constructor(private readonly store: AppState,private route: ActivatedRoute) {}
     ngOnInit() {
-    let ids = this.route.snapshot.paramMap.get('ids');
-    this.selectedProducts = ListProduct.filter(x => ids!.includes(x.Id.toString()));
+      
+      const _ListProduct  = localStorage.getItem("ListProduct");  
+      const ListProduct = JSON.parse(_ListProduct!) ;         
+      let ids = this.route.snapshot.paramMap.get('ids');
+      this.selectedProducts = ListProduct.filter((x: any) => ids!.includes(x.Id.toString()));
 
-    /*let ids! :number[];
+
+      /*let ids! :number[];
     this.store.getIds().subscribe((x: number[]) => {ids = x});
     this.selectedProducts = ListProduct.filter(x => ids.includes(x.Id));
     */

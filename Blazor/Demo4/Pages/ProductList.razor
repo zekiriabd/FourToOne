@@ -1,11 +1,11 @@
-﻿@page "/productlist"
-
+﻿@page "/"
+@page "/productlist"
 @if (products.Any())
 {
     <div class="row">
         <i class="fa fa-shopping-cart"></i>
-        
-        <a href="/orderlist/@string.Join(',', Ids)">panier</a>
+
+        <a href="/productedit">productedit</a>
         <NavLink href='@($"/orderlist/{string.Join(',', Ids)}")'>panier</NavLink>
     
 </div>
