@@ -1,0 +1,59 @@
+﻿@page "/productedit"
+@using Blazored.LocalStorage;
+@using System.Text.Json;
+@inject ILocalStorageService _LocalStorageService
+@inject NavigationManager _Navigation
+<h3>ProductEdit</h3>
+<div class="card">
+    <h5 class="card-header">new product</h5>
+    <div class="card-body">
+        <EditForm Model="ProductO" OnSubmit="Save">
+            <DataAnnotationsValidator />
+            <ValidationSummary />
+
+            <div class="form-group">
+                <label for="txName">Name</label>
+                <InputText id="txName" class="form-control" placeholder="Enter name" @bind-Value="ProductO.Name"  />
+                <ValidationMessage For="@(() => ProductO.Name)" />
+            </div>
+            <div class="form-group">
+                <label for="txComment">Comment</label>
+                <InputText id="txComment" class="form-control" placeholder="Enter name" @bind-Value="ProductO.Comment" />
+                <ValidationMessage For="@(() => ProductO.Comment)" />
+            </div>
+            <div class="form-group">
+                <label for="txPrice">Price</label>
+                <InputNumber id="txPrice" class="form-control" placeholder="Enter name" @bind-Value="ProductO.Price" />
+                <ValidationMessage For="@(() => ProductO.Price)" />
+            </div>
+            <div class="form-group">
+                <label for="txDiscount">Discount</label>
+                <InputNumber id="txDiscount" class="form-control" placeholder="Enter name" @bind-Value="ProductO.Discount" />
+                <ValidationMessage For="@(() => ProductO.Discount)" />
+            </div>
+            <div class="form-group">
+                <label for="image">Image</label>
+                <InputFile id="primage" class="form-control" accept="image/png, image/jpeg" /> 
+                <InputText id="txComment" class="form-control" placeholder="Enter name" @bind-Value="ProductO.Image" />
+            </div>
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </EditForm>
+
+    </div>
+</div>
+
+@code {
+    private MyProduct ProductO { get; set; } = new MyProduct();
+    private async Task Save()
+    {
+        string strproducts = await _LocalStorageService.GetItemAsync<string>("data");
+        var products = JsonSerializer.Deserialize<MyProduct[]>(strproducts).ToList();
+        products.Add(ProductO);
+        strproducts = JsonSerializer.Serialize(products);
+        await _LocalStorageService.SetItemAsync("data", strproducts);
+        _Navigation.NavigateTo("productlist");
+
+    }
+
+}

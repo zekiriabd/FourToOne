@@ -7,18 +7,24 @@ import { ProductComponent } from './components/product/product.component';
 import { ProductListComponent } from './pages/productlist/productlist.component';
 import { OrderlistComponent } from './pages/orderlist/orderlist.component';
 import { AppRoutingModule } from './app-routing.module';
+import { NotfoundComponent } from './pages/notfound/notfound.component';
+import { ProductEditComponent } from './pages/product-edit/product-edit.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProductComponent,
     ProductListComponent,
-    OrderlistComponent
+    OrderlistComponent,
+    NotfoundComponent,
+    ProductEditComponent
   ],
   imports: [
     BrowserModule,
     NgbModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

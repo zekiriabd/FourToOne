@@ -1,65 +1,22 @@
-﻿using Demo4.Models;
+﻿using Blazored.LocalStorage;
+using Demo4.Models;
 using Microsoft.AspNetCore.Components;
+using System.Text.Json;
 
 namespace Demo4.Pages
 {
     public partial class OrderList
     {
+        [Inject] private ILocalStorageService _LocalStorageService { get; set; }
         private IEnumerable<MyProduct> SelectedProducts { get; set; }
-        private List<MyProduct> products = new()
-        {
-            new MyProduct()
-            {
-            Id = 1,
-            Name = "ASUS Rog",
-            Image = "https://www.cdiscount.com/pdt2/9/6/2/1/300x300/asu3760302523962/rw/asus-notebook-x409fa-bv606t-15-core-i3-2-1-ghz.jpg",
-            Comment = @"Le PC Portable Gaming ASUS ROG STRIX G17 vous permettra de jouer dans les meilleures conditions à vos jeux PC favoris grâce à des composants ultra-performants, un écran 144 Hz et une conception haut de gamme qui ne laisse rien au hasard.",
-            Price = 12354.00M,
-            Discount = 50
-            },
-            new MyProduct()
-            {
-            Id = 2,
-            Name = "ASUS Rog",
-            Image = "https://m.media-amazon.com/images/I/5107xCFAVpL._AC_SS450_.jpg",
-            Comment = @"Le PC Portable Gaming ASUS ROG STRIX G17 vous permettra de jouer dans les meilleures conditions à vos jeux PC favoris grâce à des composants ultra-performants, un écran 144 Hz et une conception haut de gamme qui ne laisse rien au hasard.",
-            Price = 12354.00M,
-            Discount = 50
-            },
-            new MyProduct()
-            {
-            Id = 3,
-            Name = "ASUS Rog",
-            Image = "https://www.cdiscount.com/pdt2/9/6/2/1/300x300/asu3760302523962/rw/asus-notebook-x409fa-bv606t-15-core-i3-2-1-ghz.jpg",
-            Comment = @"Le PC Portable Gaming ASUS ROG STRIX G17 vous permettra de jouer dans les meilleures conditions à vos jeux PC favoris grâce à des composants ultra-performants, un écran 144 Hz et une conception haut de gamme qui ne laisse rien au hasard.",
-            Price = 12354.00M,
-            Discount = 50
-            },
-            new MyProduct()
-            {
-            Id = 4,
-            Name = "ASUS Rog",
-            Image = "https://www.cdiscount.com/pdt2/9/6/2/1/300x300/asu3760302523962/rw/asus-notebook-x409fa-bv606t-15-core-i3-2-1-ghz.jpg",
-            Comment = @"Le PC Portable Gaming ASUS ROG STRIX G17 vous permettra de jouer dans les meilleures conditions à vos jeux PC favoris grâce à des composants ultra-performants, un écran 144 Hz et une conception haut de gamme qui ne laisse rien au hasard.",
-            Price = 12354.00M,
-            Discount = 50
-            },
-            new MyProduct()
-            {
-            Id = 5,
-            Name = "ASUS Rog",
-            Image = "https://www.cdiscount.com/pdt2/9/6/2/1/300x300/asu3760302523962/rw/asus-notebook-x409fa-bv606t-15-core-i3-2-1-ghz.jpg",
-            Comment = @"Le PC Portable Gaming ASUS ROG STRIX G17 vous permettra de jouer dans les meilleures conditions à vos jeux PC favoris grâce à des composants ultra-performants, un écran 144 Hz et une conception haut de gamme qui ne laisse rien au hasard.",
-            Price = 12354.00M,
-            Discount = 50
-            }
+        private List<MyProduct> products { get; set; } = new();
 
-        };
-
-        [Parameter] public string strIds {get;set;} 
-        protected override void OnInitialized()
+        [Parameter] public string strIds {get;set;}
+        protected override async Task OnInitializedAsync()
         {
             //SelectedProducts = products.Where(x => _Store.Ids.Contains(x.Id));
+            string strproducts = await _LocalStorageService.GetItemAsync<string>("data");
+            products = JsonSerializer.Deserialize<MyProduct[]>(strproducts).ToList();
             var ids = strIds.Split(',');
             SelectedProducts = products.Where(x => ids.Contains(x.Id.ToString()));
         }
