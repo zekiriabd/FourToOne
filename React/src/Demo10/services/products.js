@@ -10,3 +10,12 @@ export function setProducts() {
 export function getProducts() {
  return JSON.parse(localStorage.getItem("data"))
 }
+
+
+export function addProduct(_products) {
+ localStorage.setItem("added-data", JSON.stringify(_products))
+}
+
+export function getAddedProducts() {
+ return JSON.parse(localStorage.getItem("added-data"))
+}

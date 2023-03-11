@@ -1,7 +1,7 @@
 import { Link, useSearchParams } from "react-router-dom";
 import Product from "./Product";
 import { products } from "./data";
-
+const [a , b] = [1,2]
 const Cards = () => {
   const [searchParams] = useSearchParams();
   const addedProducts = searchParams.get("addedProducts").split(",");
